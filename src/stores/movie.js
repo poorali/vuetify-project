@@ -42,7 +42,7 @@ const useMovieStore = defineStore('movie', {
     },
     initializeState(params) {
       this.currentPage = params.page || 1;
-      this.query = params.q || 'q';
+      this.query = params.q || '';
     },
     resetSearch(){
       this.items = []
