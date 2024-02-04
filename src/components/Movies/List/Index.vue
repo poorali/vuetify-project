@@ -1,7 +1,7 @@
 <template>
-  <v-data-table :headers="headers" :items="moviesStore.items" :loading="moviesStore.isFetching">
+  <v-data-table density="compact" :headers="headers" :items="moviesStore.items" :loading="moviesStore.isFetching">
     <template v-slot:bottom>
-      <v-pagination total-visible="5" :page="moviesStore.currentPage" :length="moviesStore.totalPages"
+      <v-pagination total-visible="6" :page="moviesStore.currentPage" :length="moviesStore.totalPages"
                     v-model="moviesStore.currentPage"></v-pagination>
     </template>
 

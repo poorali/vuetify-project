@@ -9,4 +9,6 @@
 import Search from '@/components/Movies/Search'
 import Favourite from '@/components/Movies/Favourite'
 import List from '@/components/Movies/List'
+import useImplementation from './Hooks'
+useImplementation()
 </script>

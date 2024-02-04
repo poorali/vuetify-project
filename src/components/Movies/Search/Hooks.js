@@ -11,6 +11,8 @@ export default () => {
   const getMovies = () => {
     if (moviesStore.query.trim().length > 2) {
       debouncedSearch()
+    }else{
+      moviesStore.resetSearch()
     }
   }
   watch(() => moviesStore.query, () => getMovies())

@@ -30,6 +30,15 @@ const useMovieStore = defineStore('movie', {
           this.totalPages = Math.floor(response.totalResults / this.items.length)
         })
         .finally(() => this.isFetching = false)
+    },
+    initializeState(params) {
+      this.currentPage = params.page || 1;
+      this.query = params.q || 'q';
+    },
+    resetSearch(){
+      this.items = []
+      this.currentPage = 1
+      this.totalPages = 1
     }
   }
 })
