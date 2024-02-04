@@ -27,6 +27,7 @@ const useMovieStore = defineStore('movie', {
       }, {s: this.query, page: this.currentPage})
         .then(response => {
           this.items = response.Search
+          this.totalPages = Math.floor(response.totalResults / this.items.length)
         })
         .finally(() => this.isFetching = false)
     }
