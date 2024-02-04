@@ -12,11 +12,6 @@ const useMovieStore = defineStore('movie', {
     totalPages: 1,
     isFetching: false
   }),
-  getters:{
-    getFavourites(){
-      return this.items.filter(item => this.favourites.includes(item.Title))
-    }
-  },
   actions: {
     toggleFavourite(item){
       if(this.favourites[item.Title]){
