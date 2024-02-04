@@ -6,12 +6,26 @@ const useMovieStore = defineStore('movie', {
   state: () => ({
     query: '',
     items: [],
-    favourites: [],
+    //Get favourites from localstorage
+    favourites: JSON.parse(localStorage.getItem('favourites')) || {},
     currentPage: 1,
     totalPages: 1,
     isFetching: false
   }),
+  getters:{
+    getFavourites(){
+      return this.items.filter(item => this.favourites.includes(item.Title))
+    }
+  },
   actions: {
+    toggleFavourite(item){
+      if(this.favourites[item.Title]){
+        delete this.favourites[item.Title]
+      }else{
+        this.favourites[item.Title] = item
+      }
+      localStorage.setItem('favourites', JSON.stringify(this.favourites))
+    },
     async search() {
       this.isFetching = true
       useCache(async () => {

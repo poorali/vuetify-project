@@ -17,6 +17,9 @@ export default function () {
     {
       title: 'Release Year',
       value: 'Year',
+    },
+    {
+      title: 'Is favourite',
     }
   ]
   watch(() => moviesStore.currentPage, () => {

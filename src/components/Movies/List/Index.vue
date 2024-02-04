@@ -13,11 +13,13 @@
         </td>
         <td>{{ item.Title }}</td>
         <td>{{ item.Year }}</td>
+        <td><Like :item="item"/></td>
       </tr>
     </template>
   </v-data-table>
 </template>
 <script setup lang="ts">
+import Like from '@/components/Movies/Like'
 import useList from './Hooks'
 
 const {moviesStore, headers} = useList();
